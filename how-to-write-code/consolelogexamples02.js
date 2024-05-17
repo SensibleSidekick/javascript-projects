@@ -1,3 +1,7 @@
 console.log("Some Programming Languages:");
 
-console.log("Python\nJavaScript\nJava\nC#\nSwift");
+console.log("Python\tJavaScript\nJava\nC#\nSwift");
+
+
+console.log(16 - 2 * 5 / 3 + 1);
+
