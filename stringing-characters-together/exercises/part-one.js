@@ -18,5 +18,5 @@ if (numberConvert.includes(checkFor)){
     console.log(numberConvert);
     console.log(numberConvert.length);
 } else {
-    console.log(numberConvert);
+    console.log(numberConvert.length);
 }
