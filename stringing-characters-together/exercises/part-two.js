@@ -33,3 +33,7 @@ console.log(dna.slice(16, 19));
 //4) Use a template literal to print, "The DNA strand is ___ characters long."
 console.log(`The DNA strand is ${dnaTwo.length} characters long.`)
 //5) Just for fun, apply methods to ``dna`` and use another template literal to print, 'taco cat'.
+let taco = dnaTwo.slice(4,7);
+let cat = dnaTwo.slice(40, 43);
+let tacoCat =`${taco}o${cat}`;
+console.log(tacoCat.toLowerCase());
