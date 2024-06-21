@@ -8,39 +8,52 @@ strings = [protoArray1, protoArray2, protoArray3, protoArray4];
 //2) 
 function reverseCommas() {
 	//TODO: 1. create and instantiate your variables.
-	let check;
-	let output;
+	let check = ','
+	let output = '';
 	//TODO: 2. write the code required for this step
-
+    let reversedCommas = strings[0].split(check);
+    reversedCommas = reversedCommas.reverse();
+    reversedCommas = reversedCommas.join(',');
+	output = reversedCommas;
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
 }
 
 //3)
 function semiDash() {
-	let check;
-	let output;
+	let check = ';';
+	let output = '';
 //TODO: write the code required for this step
-
+	let semiToDash = strings[1].split(check);
+	semiToDash = semiToDash.sort();
+	semiToDash = semiToDash.join('-');
+	output = semiToDash;
   
 	return output;
 }
 
 //4)
 function reverseSpaces() {
-	let check;
-	let output;
+	let check = ' ';
+	let output = '';
   //TODO: write the code required for this step
-
+	let reversedSpaces = strings[2].split(' ');
+	reversedSpaces = reversedSpaces.sort();
+	reversedSpaces = reversedSpaces.reverse();
+	reversedSpaces = reversedSpaces.join(' ');
+	output = reversedSpaces
 	return output;
 }
 
 //5)
 function commaSpace() {
-	let check;
-	let output;
+	let check = ', ';
+	let output = '';
 	//TODO: write the code required for this step
-  
+	let reversedCommas =strings[3].split(check);
+	reversedCommas = reversedCommas.reverse();
+	reversedCommas = reversedCommas.join(',');
+	output = reversedCommas;
 	return output;
 }
 
