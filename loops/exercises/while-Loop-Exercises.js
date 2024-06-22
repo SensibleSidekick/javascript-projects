@@ -23,7 +23,7 @@ let shuttleAltKm = 0
     }
   
   }
-  
+
 
 
 
@@ -42,15 +42,23 @@ while ((crewAboard < 1 || crewAboard > 8) || isNaN(crewAboard)) {
 
   }
 }
-  
-console.log(startFuel);
-console.log(crewAboard);
+
+
 
   
 //c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
-
+for (i= startFuel; i  > (crewAboard * 100); i = i - (crewAboard * 100), shuttleAltKm = shuttleAltKm + 50 ){
+  console.log(`Fuel: ${i} units.`)
+  
+}
 
 
 /*Exercise #5: Output the result with the phrase, “The shuttle gained an altitude of ___ km.”
 
 If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”*/
+console.log(`The shuttle gained an altitude of ${shuttleAltKm} km.`);
+if (shuttleAltKm >= 2000){
+  console.log('Orbit achieved!');
+} else {
+  console.log('Failed to reach orbit.');
+}
