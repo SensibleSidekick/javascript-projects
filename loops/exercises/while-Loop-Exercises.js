@@ -11,7 +11,7 @@ let shuttleAltKm = 0
 /*Exercise #4: Construct while loops to do the following:
   a. Query the user for the starting fuel level. Validate that the user enters a positive, integer value greater than 5000 but less than 30000. */
   while((startFuel < 5000 || startFuel > 30000) || isNaN(startFuel)) {
-    userFuel = input.question('How many units of fuel would you like to load?');
+    userFuel = input.question('How many units of fuel would you like to load? ');
     startFuel = Number(userFuel);
     if (isNaN(startFuel)) {
        startFuel = input.question(`You can't use ${userFuel} as a fuel source silly! Please enter a number between 5000 and 30000:`);
@@ -31,10 +31,10 @@ let shuttleAltKm = 0
 
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
 while ((crewAboard < 1 || crewAboard > 8) || isNaN(crewAboard)) {
-  userCrew = input.question("How many astronauts for the flight?");
+  userCrew = input.question("How many astronauts for the flight? ");
   crewAboard = Number(userCrew);
   if (isNaN(crewAboard)) {
-    crewAboard = input.question('Please enter a number from 1 to 7:');
+    crewAboard = input.question(`${userCrew} can't pilot a shuttle! Please enter a number from 1 to 7:`);
   } else if (!isNaN(crewAboard)) {
     if(crewAboard < 1 || crewAboard > 7) {
        crewAboard = input.question('Please enter a number from 1 to 7:');
