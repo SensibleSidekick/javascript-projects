@@ -11,9 +11,7 @@ function reverseCommas() {
 	let check = ','
 	let output = '';
 	//TODO: 2. write the code required for this step
-    let reversedCommas = strings[0].split(check);
-    reversedCommas = reversedCommas.reverse();
-    reversedCommas = reversedCommas.join(',');
+    let reversedCommas = strings[0].split(check).reverse().join(',');
 	output = reversedCommas;
 	//NOTE: For the code to run properly, you must return your output.  this needs to be the final line of code within the function's { }.
 	return output;
@@ -24,9 +22,7 @@ function semiDash() {
 	let check = ';';
 	let output = '';
 //TODO: write the code required for this step
-	let semiToDash = strings[1].split(check);
-	semiToDash = semiToDash.sort();
-	semiToDash = semiToDash.join('-');
+	let semiToDash = strings[1].split(check).sort().join('-');
 	output = semiToDash;
   
 	return output;
@@ -37,10 +33,7 @@ function reverseSpaces() {
 	let check = ' ';
 	let output = '';
   //TODO: write the code required for this step
-	let reversedSpaces = strings[2].split(' ');
-	reversedSpaces = reversedSpaces.sort();
-	reversedSpaces = reversedSpaces.reverse();
-	reversedSpaces = reversedSpaces.join(' ');
+	let reversedSpaces = strings[2].split(' ').sort().reverse().join(' ');
 	output = reversedSpaces
 	return output;
 }
@@ -50,9 +43,7 @@ function commaSpace() {
 	let check = ', ';
 	let output = '';
 	//TODO: write the code required for this step
-	let reversedCommas =strings[3].split(check);
-	reversedCommas = reversedCommas.reverse();
-	reversedCommas = reversedCommas.join(',');
+	let reversedCommas =strings[3].split(check).reverse().join(',');
 	output = reversedCommas;
 	return output;
 }
