@@ -1,4 +1,4 @@
-function makeLine(width, character){
+function makeLine(width, character = '#'){
     let line = ''
     for (let i= 0; i < width; i++) {
         line += character;
@@ -8,7 +8,7 @@ function makeLine(width, character){
 
 //console.log(makeLine(10));
 
-function makeSquare(size, character) {
+function makeSquare(size, character = '#') {
     let square = ``
     for (let i = 0; i < size; i++){
         for (let j = 0; j <= size; j++){
@@ -22,7 +22,7 @@ function makeSquare(size, character) {
 
 //console.log(makeSquare(6));
 
-function makeRectangle(width, height, character){
+function makeRectangle(width, height, character = '#'){
     let rectangle = ''
     for(let h = 0; h < height; h++){
        for(let i = 0; i < width; i++) {
@@ -37,7 +37,7 @@ return rectangle;
 
 //console.log(makeRectangle(5,3));
 
-function makeDownwardStairs(height, character){
+function makeDownwardStairs(height, character = '#'){
     let stairs = '';
     for (let i=0; i <= height; i++) {
         stairs += makeLine(i) + `\n`;
@@ -48,7 +48,7 @@ function makeDownwardStairs(height, character){
 
 //console.log(makeDownwardStairs(5));
 
-function makeSpaceLine(numSpaces, numChars, character) {
+function makeSpaceLine(numSpaces, numChars, character = '#') {
 let spaces = ''
 let characters = ''
 for (let i = 0; i < numSpaces; i++) {
@@ -64,7 +64,7 @@ return spaceLine;
 
 //console.log(makeSpaceLine(5,3, '!'));
 
-function makeIsosceleseTriangle (height, character) {
+function makeIsosceleseTriangle (height, character = '#') {
     let isosceleseTriangle = ''
 
     for (let i = 0; i < height; i++) {
@@ -80,9 +80,9 @@ function reverse(str) {
     return reversedLettersArray;
 }
 
-function makeDiamond(height, character) {
+function makeDiamond(height, character = '#') {
     let diamond = makeIsosceleseTriangle(height, character) + `\n` + reverse(makeIsosceleseTriangle(height, character));
     return diamond;
 }
 
-console.log(makeDiamond(5, '!'));
+console.log(makeDiamond(5));
