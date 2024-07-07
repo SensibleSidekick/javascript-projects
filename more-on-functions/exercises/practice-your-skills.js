@@ -1,5 +1,15 @@
 //Create an anonymous function and set it equal to a variable.
 
+let numOrString = function (arr) {
+    if (!isNaN(arr))
+        {
+            return arr * 3;
+        } else if (isNaN(arr)) {
+            return "ARRR!";
+        }
+
+}
+
 /* Your function should:
 a) If passed a number, return the tripled value.
 b) If passed a string, return the string “ARRR!”
@@ -13,3 +23,7 @@ c) Print the new array to confirm your work.
 */
 
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+
+let arrayCheck = arr.map(numOrString);
+
+console.log(arrayCheck);
