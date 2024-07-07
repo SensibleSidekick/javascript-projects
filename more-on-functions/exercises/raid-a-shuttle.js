@@ -19,20 +19,18 @@ function holdStatus(arr){
 }
 
 let superNormalFuelCheck = function(fuel) {
-  let siphonedFuel = 0;
-  while (fuel > 50000){
-    fuel = fuel - 10000;
-    siphonedFuel = siphonedFuel + 10000;
-    console.log(fuel);
-    console.log(siphonedFuel);
+  if (checkFuel(fuel) === 'green') {
+    return fuel - 100001;
+  } else if (checkFuel(fuel) === 'yellow') {
+    return fuel - 50001;
+  } else
+  return fuel; 
   }
-  return [siphonedFuel, fuelLevel];
-}
-
+  
 
 
 let defoCargoCheck = function (arr) {
-  let loot = [];
+  
 for (let i = 0; i < 2; i++){
   loot.push(arr.splice(3,1));
   arr.push('sandbag');
@@ -42,22 +40,19 @@ for (let i = 0; i < 2; i++){
 }
 
 function irs(fuel, cargo){
- // return `Raided ${superNormalFuelCheck(fuelLevel)} kg of fuel from the tanks, and stole ${} and ${} from the cargo hold.`;
+  defoCargoCheck(cargoHold);
+  superNormalFuelCheck(fuelLevel);
+  return `Raided ${superNormalFuelCheck(fuelLevel)} kg of fuel from the tanks, and stole ${loot[0]} and ${loot[1]} from the cargo hold.`;
 } 
 
 
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
-
-defoCargoCheck(cargoHold);
-superNormalFuelCheck(fuelLevel);
-console.log(fuelLevel);
-console.log(cargoHold);
+let loot = [];
 console.log("Fuel level: " + checkFuel(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
 
-
-//console.log(irs(fuelLevel, cargoHold));
+console.log(irs(fuelLevel, cargoHold));
 
 
 
