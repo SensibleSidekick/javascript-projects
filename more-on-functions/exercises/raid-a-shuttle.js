@@ -19,14 +19,14 @@ function holdStatus(arr){
 }
 
 let superNormalFuelCheck = function(fuel) {
-  if (checkFuel(fuel) === 'green') {
-    return fuel- 1000001;
-  } else if (checkFuel(fuel) === 'yellow') {
-    return fuel - 50001; 
-  } else {
-    return fuel
+  let siphonedFuel = 0;
+  while (fuel > 50000){
+    fuel = fuel - 10000;
+    siphonedFuel = siphonedFuel + 10000;
+    console.log(fuel);
+    console.log(siphonedFuel);
   }
-  
+  return [siphonedFuel, fuelLevel];
 }
 
 
