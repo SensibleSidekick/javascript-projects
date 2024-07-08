@@ -91,27 +91,28 @@ console.log(assignID(animalCrew, astronautID));
 // Print out the relevant information about each animal.
 
 let a = 0
-    for (item in animalCrew[a]) {
-      
+for (item in animalCrew[a]) {
+      if (a < animalCrew.length){
       console.log(`${animalCrew[a]["name"]} is a ${animalCrew[a]["species"]}. They are ${animalCrew[a]["age"]} years old and ${animalCrew[a]["mass"]} kilograms. Their ID is ${animalCrew[a]["astronautID"]}`);
       a++
-    }
+   }
+}
 
 
 // Start an animal race!
-function fitnessTest(arr){
 
+function fitnessTest(arr){
+ let raceResults = [];
    for (let i = 0; i < arr.length; i++){
       let distance = 0;
       let turns = 0; 
           while(distance < 21) {
-            distance = distance + arr[i].move();
+            distance += arr[i].move();
             turns++;
           }
-      console.log(`${arr[i]["name"]} took ${turns} turns to take 20 steps.`)
+      raceResults.push(`${arr[i]["name"]} took ${turns} turns to take 20 steps.`);
    }
-
+   return raceResults;
 }
 
-
-fitnessTest(animalCrew);
+console.log(fitnessTest(animalCrew));
