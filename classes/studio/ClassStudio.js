@@ -50,3 +50,12 @@ console.log(gladGator.status());
 
 
 //Part 4 - Use the methods to boost Glad Gator’s status to Reserve or higher. How many tests will it take to reach Reserve status? How many to reach Accepted? Remember, scores cannot exceed 100%.
+function boostGlad() {
+
+    while ( gladGator.average() < 90){
+        gladGator.addScore(100);
+}
+        return gladGator.status();
+}
+
+console.log(boostGlad());
