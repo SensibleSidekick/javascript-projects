@@ -21,8 +21,8 @@ class CrewCandidate {
     }
 
     status() {
-        let candidateStatus = ''
-        if (this.average() >= 90){
+        let candidateStatus;
+        if (this.average() >= 90) {
             candidateStatus = "Accepted";
         } else if (this.average() <= 89 && this.average() >= 80) {
             candidateStatus = "Reserve";
