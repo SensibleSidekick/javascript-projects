@@ -9,10 +9,8 @@ function init () {
     const land = document.getElementById("landing");
     const abort = document.getElementById("missionAbort");
     const rocket = document.getElementById("rocket");
-    const up = document.getElementById("up");
-    const down = document.getElementById("down");
-    const left = document.getElementById("left");
-    const right = document.getElementById("right");
+    let rocketPosX = 0;
+    let rocketPosY = 0;
 
 
     takeOff.addEventListener('click', event => {
@@ -27,8 +25,7 @@ function init () {
     land.addEventListener('click', event => {
         window.alert("The shuttle is landing. Landing gear engaged.");
         flightStat.innerHTML = "The shuttle has landed";
-        background.style.backgroundColor = "green";
-        height.innerHTML = 0;
+        resetRocket();
     })
 
     abort.addEventListener('click', event => {
@@ -36,39 +33,44 @@ function init () {
 
      if (confirmation) {
             flightStat.innerHTML = "Mission aborted.";
-            background.style.backgroundColor = "green";
-            height.innerHTML = 0;
+            resetRocket();
         }
 
 
     })
 
-    left.addEventListener('click', event => {
-        let currentLeft = parseInt(window.getComputedStyle(rocket).left);
-        rocket.style.left = currentLeft - 10 + "px"
-
-    })
-
-    right.addEventListener('click', event => {
-       let currentRight = parseInt(window.getComputedStyle(rocket).left);
-       rocket.style.left = currentRight + 10 + "px"
-
-    })
-
-    up.addEventListener('click', event => {
-        let currentTop = parseInt(window.getComputedStyle(rocket).top);
-        rocket.style.top = currentTop - 10 + "px";
+document.addEventListener('click', event => {
+    let backgroundWidth = parseInt(window.getComputedStyle(background).getPropertyValue('width'));
+    if (event.target.id === "up" && altitude < 250000) {
+        rocketPosY += 10
+        rocket.style.marginBottom = rocketPosY + 'px';
         altitude += 10000;
         height.innerHTML = altitude;
-    })
-
-    down.addEventListener('click', event => {
-        let currentBottom = parseInt(window.getComputedStyle(rocket).top);
-        rocket.style.top = currentBottom + 10 + "px";
+    }
+    if (event.target.id === "down" && altitude > 0) {
+        rocketPosY -= 10
+        rocket.style.marginBottom = rocketPosY + 'px';
         altitude -= 10000;
         height.innerHTML = altitude;
-    })
+    }
+    if (event.target.id === "left" && rocketPosX > -(backgroundWidth / 2 - 20)) {
+        rocketPosX -= 10
+        rocket.style.marginLeft = rocketPosX + 'px';
+    }
+    if (event.target.id === "right" && rocketPosX < (backgroundWidth / 2 - 60)) {
+        rocketPosX += 10
+        rocket.style.marginLeft = rocketPosX + 'px';
+    }
+})
 
+function resetRocket() {
+    background.style.backgroundColor = "green";
+    height.innerHTML = 0;
+    rocketPosX = 0;
+    rocketPosY = 0;
+    rocket.style.marginLeft = rocketPosX + 'px';
+    rocket.style.marginBottom = rocketPosY + 'px';
+}
 
 }
 
